@@ -1,0 +1,31 @@
+{
+  "name": "backbone.base",
+  "version": "0.0.1",
+  "description": "Essential Backbone View lifecycle management and base components",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec --timeout 200 --slow 99999"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmolin/backbone.base.git"
+  },
+  "author": "Davide Molin",
+  "license": "MIT",
+  "devDependencies": {
+    "glob": "*",
+    "mocha": "*",
+    "chai": "*",
+    "sinon": "*",
+    "underscore": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-mocha": "~0.4.1",
+    "grunt-contrib-connect": "~0.7.0",
+    "grunt-browserify": "*"
+  },
+  "dependencies": {
+    "backbone": "~1.1.2"
+  }
+}

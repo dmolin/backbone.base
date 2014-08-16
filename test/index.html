@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Backbone tests</title>
+    <link href="./node_modules/grunt-mocha/node_modules/mocha/mocha.css" rel="stylesheet"/>
+    <link href="tests.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="mocha"></div>
+
+<script src='./node_modules/grunt-mocha/node_modules/mocha/mocha.js' ></script>
+<script src='./node_modules/chai/chai.js' ></script>
+
+<script>
+
+mocha.setup('bdd');
+expect = chai.expect;
+assert = chai.assert;
+
+var ready = function(){
+    document.body.setAttribute('data-ready', '1')
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    addBackButton();
+    if (window.mochaPhantomJS) mochaPhantomJS.run(ready)
+    else window.mocha.run(ready)
+});
+
+function addBackButton() {
+    var mochaEl = document.getElementById('mocha');
+    var backEl = document.createElement('a');
+    var text = document.createTextNode('go back');
+
+    backEl.setAttribute('href', '/');
+    backEl.setAttribute('class', 'back-button');
+    backEl.appendChild(text);
+
+    document.body.insertBefore(backEl, mochaEl);
+}
+</script>
+
+<!-- execute tests for all the files under the test/ folder -->
+<script src="_backbone.base.js"></script>
+</body>
+</html>

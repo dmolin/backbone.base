@@ -1,0 +1,9 @@
+{
+    "globals" : {
+        "global": true
+    },
+    "asi" : true,
+    "eqeqeq" : false,
+    "strict" : false,
+    "sub": true
+}
