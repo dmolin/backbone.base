@@ -28,9 +28,9 @@ var BaseView = Backbone.View.extend({
                 collection: this.collection.toJSON()
             };
         } else if(this.model) {
-            outcome = this.model.toJSON();
+            outcome = { model: this.model.toJSON() };
         } else if(this.collection) {
-            outcome = this.collection.toJSON();
+            outcome = { collection: this.collection.toJSON() };
         }
         return outcome;
     },
@@ -44,21 +44,11 @@ var BaseView = Backbone.View.extend({
     },
 
     render: function() {
-        //basic view-model passed to the template
-        var outcome = this.serialize();   //this can be overridden
-        var viewModel = {};
-        if(outcome.collection) {
-            viewModel.model = outcome.model;
-            viewModel.collection = outcome.collection;
-        } else {
-            viewModel[this.collection ? "collection" : "model"] = outcome;
-        }
-
         if(_.isFunction(this.beforeRender)) {
             this.beforeRender();
         }
 
-        this.$el.html( this.template( this.augmentViewModel(viewModel) ) );
+        this.$el.html( this.template( this.augmentViewModel(this.serialize()) ) );
 
         //then, we render the subviews, if any (override that method to do your stuff)
         this.renderSubviews();
