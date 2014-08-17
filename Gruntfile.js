@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Project configuration.
     grunt.initConfig({
@@ -40,7 +41,9 @@ module.exports = function(grunt) {
             all: {
                 options: {
                     urls: ['http://localhost:<%= connect.test.options.port %>/index.html'],
-                    bail: false
+                    bail: false,
+                    log: true,
+                    logErrors: true
                 }
             }
         },
@@ -62,6 +65,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        watch: {
+            files: ["src/**/*.js", "test/**/*.js"],
+            tasks: ['test']
+        }
     });
 
     // Default task(s).

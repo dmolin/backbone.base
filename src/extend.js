@@ -1,4 +1,3 @@
-var _ = global._;
 
 function isPlainObject(obj){
   var ctor, key;
@@ -29,7 +28,7 @@ module.exports = function extend() {
     }
 
     // Handle case when target is a string or something (possible in deep copy)
-    if ( typeof target !== "object" && !_.isFunction(target) ) {
+    if ( typeof target !== "object" && !isFunction(target) ) {
         target = {};
     }
 
@@ -53,10 +52,10 @@ module.exports = function extend() {
                 }
 
                 // Recurse if we're merging plain objects or arrays
-                if ( deep && copy && ( isPlainObject(copy) || (copyIsArray = _.isArray(copy)) ) ) {
+                if ( deep && copy && ( isPlainObject(copy) || (copyIsArray = isArray(copy)) ) ) {
                     if ( copyIsArray ) {
                         copyIsArray = false;
-                        clone = src && _.isArray(src) ? src : [];
+                        clone = src && isArray(src) ? src : [];
 
                     } else {
                         clone = src && isPlainObject(src) ? src : {};
@@ -76,3 +75,11 @@ module.exports = function extend() {
     // Return the modified object
     return target;
 };
+
+function isArray(o) {
+    return toString.call(o) == '[object Array]';
+}
+
+function isFunction(o) {
+    return typeof o === 'function';
+}
