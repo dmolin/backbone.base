@@ -3,9 +3,15 @@
   "version": "0.0.1",
   "description": "Essential Backbone View lifecycle management and base components",
   "main": "index.js",
+  "homepage": "https://github.com/dmolin/backbone.base",
   "scripts": {
     "test": "grunt"
   },
+  "keywords": [
+    "backbone"
+  ],
+  "author": "Davide Alberto Molin <@davidemolin> (http://www.davidemolin.com)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:dmolin/backbone.base.git"
