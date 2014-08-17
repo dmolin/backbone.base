@@ -56,6 +56,16 @@ The base view class provides also a few useful functions:
 <p>Useful if you want to just 'store' the subview into the internal lookup table, to take advantage of lifecycle management.
 
 
+### lifecycle functions ###
+
+The following hooks are automatically called if defined in your view extending Backbone.base.View :
+
+- beforeRender
+<p>Called at the start of the render cycle, even before any model serialization is applied.
+- afterRender
+<p>Called after 'renderSubviews', just before exiting the render cycle.
+
+
 Internal functions not normally used by the developer (but still available if necessary) are:
 
 - cleanSubview(name)
