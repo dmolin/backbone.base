@@ -5,7 +5,7 @@ var _ = global._,
 var BaseModel = Backbone.Model.extend({
     toJSON: function() {
         //be sure to clone deep the attribute set
-        return extend(true, {}, Backbone.Model.prototype.toJSON.call(this));
+        return extend(true, {}, Backbone.Model.prototype.toJSON.apply(this, arguments));
     }
 });
 

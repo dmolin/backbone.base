@@ -6,7 +6,7 @@ Specifically, this project contains:
 - BaseView
 <p>common view class implementing subviews management (adding/removal, lifecycle management)
 
-- BaseModel/BaseCollection
+- BaseModel
 <p>base model classes implementing safe(deep) cloning of attribute sets when exporting the viewmodel for the template (to avoid accidental tainting of the model)
 
 ## How to use it ##
@@ -16,7 +16,6 @@ Simply require backbone.base into your files. you'll get an aggregate object con
 <pre>
 {
 	Model: (export of BaseModel class),
-	Collection: (export of BaseCollection class),
 	View: (export of BaseView class)
 }
 </pre>
