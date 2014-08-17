@@ -4,11 +4,11 @@
   "description": "Essential Backbone View lifecycle management and base components",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec --timeout 200 --slow 99999"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dmolin/backbone.base.git"
+    "url": "git@github.com:dmolin/backbone.base.git"
   },
   "author": "Davide Molin",
   "license": "MIT",
