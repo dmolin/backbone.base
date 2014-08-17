@@ -1,4 +1,4 @@
-var _ = require('underscore'),
+var _ = global._,
     Backbone = require('backbone');
 
 //BaseView: takes care of subviews management and basic rendering

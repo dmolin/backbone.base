@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = global._;
 
 function isPlainObject(obj){
   var ctor, key;
