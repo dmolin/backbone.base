@@ -1,5 +1,5 @@
 var _ = global._,
-    Backbone = require('backbone');
+    Backbone = global.Backbone;
 
 //BaseView: takes care of subviews management and basic rendering
 // If your model is in fact a collection (this.collection), then extend BaseCollectionView!

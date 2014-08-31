@@ -1,5 +1,5 @@
 var _ = global._,
-    Backbone = require('backbone')
+    Backbone = global.Backbone,
     extend = require('./extend');
 
 var BaseModel = Backbone.Model.extend({
