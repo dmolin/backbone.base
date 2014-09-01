@@ -97,7 +97,7 @@ var BaseView = Backbone.View.extend({
         //index also by selector
         this.selectors[selector] = view;
 
-        el[0].set('html','').appendChild( view.render().el );
+        el.html(view.render().$el);
         return this;
     },
 
