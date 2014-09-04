@@ -11,6 +11,12 @@ Specifically, this project contains:
 
 ## How to use it ##
 
+Install the library via NPM (you'll need browserify or wrapup in order to compile the final JS for the browser in your build process):
+
+```
+npm install backbone.base
+```
+
 Simply require backbone.base into your files. you'll get an aggregate object containing:
 
 <pre>
