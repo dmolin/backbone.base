@@ -77,7 +77,7 @@ module.exports = function extend() {
 };
 
 function isArray(o) {
-    return toString.call(o) == '[object Array]';
+    return Object.prototype.toString.call(o) == '[object Array]';
 }
 
 function isFunction(o) {
