@@ -74,7 +74,8 @@ var BaseView = Backbone.View.extend({
     /**
      * Call after this view has been rendered INTO a container
      */
-    attached: function(parent) {
+    setAttach: function(parent) {
+        this.attached = true;
     },
 
     /**
@@ -107,7 +108,7 @@ var BaseView = Backbone.View.extend({
 
         //call hook to signal attachment to a parent
         view.trigger("attached", el);
-        view.attached(el);
+        view.setAttach(el);
 
         return this;
     },
