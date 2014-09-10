@@ -79,6 +79,11 @@ var BaseView = Backbone.View.extend({
     },
 
     /**
+     * Hook that can be re-defined by extending classes
+     */
+    afterAttach: function() {},
+
+    /**
      *  This function store a subview and optionally renders it
         this.setSubview('tabbed-navigation', '.selector', view,  {render:true/false});
 
@@ -109,7 +114,7 @@ var BaseView = Backbone.View.extend({
         //call hook to signal attachment to a parent
         view.trigger("attached", el);
         view.setAttach(el);
-
+        view.afterAttach();
         return this;
     },
 
